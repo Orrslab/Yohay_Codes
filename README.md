@@ -13,7 +13,7 @@ The polygons files should be in KML format, and in one directory (I made them th
 2) Day/Night Progress
 Code for creating a progress scale from 0 to 100 for each night or day.
 
-Good Luck
+Good Luck &
 Contact me if needed
 
-YohaY
+Yohay

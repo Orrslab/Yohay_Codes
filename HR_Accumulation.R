@@ -1,3 +1,7 @@
+### Home Range accumulation curve by days.
+### Input data requires data frame (locs_data) containing teh following columns: Tag ID, Time in POSI format, Lat/Lon coordinates and projection details.
+### The function returns Home Ramge sizes by tracking days (or by number of points) as a list (data frame for each tag)
+
 HR_Accumulation <- function(locs_data, Tag_ID, Time_col, Latitude, Longitude, locs_CRS, 
                             HR_Method = c("KDE", "MCP"), 
                             h = "href", 

@@ -9,7 +9,7 @@ require(raster)
 
 
 
-HR_Accumulation <- function(locs_data, Tag_ID, Time_col, Latitude, Longitude, locs_CRS, 
+HR_Accumulation <- function(Tag_ID, Time_col, Latitude, Longitude, locs_CRS, 
                             HR_Method = c("KDE", "MCP"), 
                             h = "href", 
                             By_Days = TRUE,
@@ -23,10 +23,10 @@ HR_Accumulation <- function(locs_data, Tag_ID, Time_col, Latitude, Longitude, lo
   if (HR_Method[1]!="KDE" & HR_Method[1]!="MCP") stop("Undefined HR Method (KDE or MCP)")
   if (Activity_Type!="Diurnal" & Activity_Type!="Nocturnal") stop("Undefined Activity Type (Diurnal or Nocturnal)")
   
-  locs_data <- data.frame("Tag_ID" = locs_data[Tag_ID],
-                          "Time_POSI" = locs_data[Time_col],
-                          "Latitude" = locs_data[Latitude],
-                          "Longitude" = locs_data[Longitude])
+  locs_data <- data.frame("Tag_ID" = Tag_ID,
+                          "Time_POSI" = Time_col,
+                          "Latitude" = Latitude,
+                          "Longitude" = Longitude)
   colnames(locs_data) <- c("Tag_ID", "Time_POSI", "Latitude", "Longitude")
   locs_data$Time_POSI <- as.POSIXct(locs_data$Time_POSI, format = "%Y-%m-%d %H:%M:%S", tz = "utc")
   
